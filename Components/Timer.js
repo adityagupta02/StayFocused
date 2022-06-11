@@ -6,7 +6,7 @@ import Button from "./Button";
 export default function Timer(props) {
   const [isStarted, setIsStarted] = useState(false);
   const [min, setMin] = useState(10);
-  const windowWidth = Dimensions.get('window').width;
+  const windowWidth = Dimensions.get('window').width;  
 
   const onEnd =()=>{
     vibrate();
@@ -41,7 +41,7 @@ export default function Timer(props) {
             </View>
           </View>
         ) : (
-          <View >            
+          <View style={{alignItems:"center"}}>            
             <View style={styles.button}>
               <Button title="Start" size={windowWidth/3.5} onPress={(isStarted) => setIsStarted(true)} />
             </View>
@@ -50,7 +50,6 @@ export default function Timer(props) {
               <Button title="15" size={windowWidth/4} onPress={(min) => setMin(15)} />
               <Button title="10" size={windowWidth/4} onPress={(min) => setMin(10)} />
             </View>
-            
           </View>
         )}
       </View> 
@@ -78,9 +77,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   timers:{
-    // flex:0.1,
     flexDirection:"row",
-    marginLeft:10,
   },
   timer:{
     marginLeft: 20,

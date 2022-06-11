@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import Focus from './Components/Focus';
 import FocusHistory from './Components/FocusHistory';
 import Timer from './Components/Timer';
@@ -8,13 +8,14 @@ export default function App() {
   const [focus, setFocus] = useState(null);
   const [focusHistorySuccess, updateFocusHistorySuccess] = useState([]);  
   const [focusHistoryFailure, updateFocusHistoryFailure] = useState([]);
+  const height = StatusBar.currentHeight;
   const onClear = ()=>{
     updateFocusHistoryFailure([]);    
     updateFocusHistorySuccess([]);
   }
  
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.title}><Text style={styles.titleText}>StayFocused</Text></View>
       {focus ? (
         <View style = {{flex:1}}>
@@ -27,7 +28,7 @@ export default function App() {
             <FocusHistory success = {focusHistorySuccess} failure={focusHistoryFailure} clear={onClear}/>         
           </View>
       )}   
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -35,8 +36,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#253172',
-    borderWidth: 8,
-    borderTopWidth: 30,
+    marginTop: StatusBar.currentHeight,
     borderColor: '#141834',    
   },  
   title:{
