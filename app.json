@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "stayFocused",
+    "name": "StayFocused",
     "slug": "stayFocused",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,8 +21,9 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "stayfocused.app",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
