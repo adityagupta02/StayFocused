@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import React, {useState} from 'react'
 import { StatusBar, StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import Focus from './Components/Focus';
 import FocusHistory from './Components/FocusHistory';
