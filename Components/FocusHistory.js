@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, Text, View, FlatList } from 'react-native';
-import { ScrollView } from 'react-native-web';
 import Button from "./Button";
 
 export default function FocusHistory(props) {
